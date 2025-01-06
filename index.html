@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>auk.</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-p+U1+KqR8K6zLhc1q2QmQfKQFfD5bBm6Tqf+b6abR+u5X7Hz0DvSxYZJ2kDZ6dSE3Ez9OnJ0lzOGC+1G4RzOGw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <header>
+    <h1>auk.</h1>
+    <div class="performance-stats">
+      <span>FPS: <span id="fps">0</span></span>
+    </div>
+  </header>
+  <div class="controls">
+    <div class="button-group">
+      <button id="run-btn" title="Run Code"><i class="fas fa-play"></i> Run</button>
+      <button id="clear-btn" title="Clear Code"><i class="fas fa-trash"></i> Clear</button>
+      <button id="new-file-btn" title="Create New File"><i class="fas fa-file"></i> New File</button>
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fas fa-folder-open"></i> File <i class="fas fa-caret-down"></i></button>
+        <div class="dropdown-content">
+          <button id="save-btn" title="Save to LocalStorage"><i class="fas fa-save"></i> Save</button>
+          <button id="load-btn" title="Load from LocalStorage"><i class="fas fa-upload"></i> Load</button>
+          <button id="download-btn" title="Download Active File"><i class="fas fa-file-download"></i> Download</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tabs">
+    <ul id="tabs-list">
+      <!-- Tabs will be dynamically added here -->
+    </ul>
+  </div>
+  <div class="new-file-form" id="new-file-form">
+    <h2>Create New File</h2>
+    <div class="form-group">
+      <label for="file-language">Language:</label>
+      <select id="file-language">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="ruby">Ruby</option>
+        <option value="typescript">TypeScript</option>
+        <option value="java">Java</option>
+        <option value="csharp">C#</option>
+        <option value="php">PHP</option>
+        <option value="go">Go</option>
+        <option value="swift">Swift</option>
+        <option value="kotlin">Kotlin</option>
+        <option value="rust">Rust</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="file-name">File Name:</label>
+      <input type="text" id="file-name" placeholder="Enter file name" />
+    </div>
+    <button id="create-file-btn"><i class="fas fa-plus"></i> Create</button>
+    <button id="cancel-file-btn"><i class="fas fa-times"></i> Cancel</button>
+  </div>
+  <div class="main-container">
+    <div class="editor-container">
+      <!-- Editor panels will be dynamically added here -->
+    </div>
+    <div class="preview-container">
+      <div class="preview-header">Preview</div>
+      <iframe id="preview"></iframe>
+    </div>
+  </div>
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <script src="script.js"></script>
+</body>
+</html>
